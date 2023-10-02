@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .t1{
+            font-size: 70px;
+            color: rgb(7, 0, 0);
+            background-color: rgba(246, 240, 240, 0.999);
+            border-radius: 10%;
+            border: solid 2px red;
+            display: flex;
+            text-align: right;
+            /* flex-direction: column; */
+            height: 100px;
+            width:97%;
+            margin: 5px;
+        }
+
+        .id1{
+            
+            color: white;
+            background-color: rgba(32, 2, 130, 0.241);
+            border-radius: 5%;
+            border: solid 2px red;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            width: 40%;
+            height: 97vh;
+        }
+        
+        .btn{
+            font-size: 40px;
+            background-image: linear-gradient(white 30%,rgb(82, 14, 14));
+            text-size-adjust: 10px;
+            border: solid 2px black;
+            width: 129px;
+            height: 100px;
+        }
+
+        .buttons{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        body{
+            background-image: linear-gradient(black,black);
+            display: flex;
+            justify-content: center;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="id1">
+        <div>
+        <input  type="text" class="t1" id="res" readonly>
+        </div>
+        <div class="buttons">
+        <input class="btn" onclick="Clear()"  type="button" value="C">    
+        <input class="btn" onclick="back()"  type="button" value="D">    
+        <input class="btn" onclick="solve('.')"  type="button" value=".">    
+        <input class="btn" onclick="solve('/')"  type="button" value="/">    
+        <input class="btn" onclick="solve('7')"  type="button" value="7">    
+        <input class="btn" onclick="solve('8')"  type="button" value="8">    
+        <input class="btn" onclick="solve('9')"  type="button" value="9">    
+        <input class="btn" onclick="solve('*')"  type="button" value="x">    
+        <input class="btn" onclick="solve('4')"  type="button" value="4">    
+        <input class="btn" onclick="solve('5')"  type="button" value="5">    
+        <input class="btn" onclick="solve('6')"  type="button" value="6">    
+        <input class="btn" onclick="solve('-')"  type="button" value="-">    
+        <input class="btn" onclick="solve('1')"  type="button" value="1">    
+        <input class="btn" onclick="solve('2')"  type="button" value="2">    
+        <input class="btn" onclick="solve('3')"  type="button" value="3">    
+        <input class="btn" onclick="solve('+')"  type="button" value="+">    
+        <input class="btn" onclick="solve('0')"  type="button" value="0">    
+        <input class="btn" onclick="solve('00')"  type="button" value="00">    
+        <input class="btn" onclick="result('=')"  type="button" value="=">    
+        </div>
+        </div>
+
+
+<script>
+    function solve(val){
+            let v = document.getElementById('res').value +=val
+        }
+
+        function result(){
+            let exp1 = document.getElementById('res').value
+            try{
+                let num = eval(exp1)
+                document.getElementById('res').value = num
+            }
+            catch(error){
+                document.getElementById('res').value = error
+                
+            }
+        }
+
+        function back(){
+            document.getElementById('res').value = document.getElementById('res').value.slice(0, -1);
+        }
+
+        function Clear(){
+            document.getElementById('res').value = ""
+        }
+    
+</script>
+</body>
+</html>
